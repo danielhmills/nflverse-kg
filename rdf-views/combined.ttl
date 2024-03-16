@@ -1,0 +1,342 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix nfl: <http://www.openlinksw.com/ontology/nflverse#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+<#TriplesMapnflv_game> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "plays_players_teams" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/game/{game_id}#this"; rr:class nfl:Game; rr:graph <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasGameId ] ; rr:objectMap [ rr:column "game_id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:termType rr:Literal; rr:template "{game_id}: {home_team} VS {away_team}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPlay ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/game/{game_id}/{play_id}#this" ]; ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasHomeTeam ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/team/{home_team}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasAwayTeam ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/team/{away_team}" ]; ] .
+
+<#TriplesMapnflv_plays_players_teams> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "plays_players_teams" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/play/{game_id}/{play_id}#this"; rr:class nfl:Play; rr:graph <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPlayId ] ; rr:objectMap [ rr:column "play_id"] ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasGameId ] ; rr:objectMap [ rr:column "game_id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasOldGameId ] ; rr:objectMap [ rr:column "old_game_id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPossesingTeam ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/team/{posteam}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPossesingTeamType ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{posteam}PosessingTeam" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefensiveTeam ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/team/{defteam}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTimeoutTeam ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/team/{timeout_team}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTouchdownTeam ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/team/{td_team}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTouchdownPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{td_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPosTeamTimeoutsRemaining ] ; rr:objectMap [ rr:column "posteam_timeouts_remaining" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefTeamTimeoutsRemaining ] ; rr:objectMap [ rr:column "defteam_timeouts_remaining" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPosTeamScore ] ; rr:objectMap [ rr:column "posteam_score" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefTeamScore ] ; rr:objectMap [ rr:column "defteam_score" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPosTeamScorePost ] ; rr:objectMap [ rr:column "posteam_score_post" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefTeamScorePost ] ; rr:objectMap [ rr:column "defteam_score_post" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPasserPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{passer_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasReceiverPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{receiver_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasRusherPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{rusher_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLateralReceiverPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{lateral_receiver_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLateralRusherPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{lateral_rusher_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLateralSackPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{lateral_sack_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasInterceptionPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{interception_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLateralInterceptionPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{lateral_interception_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPuntReturnerPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{punt_returner_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLateralPuntReturnerPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{lateral_punt_returner_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasKickoffReturnerPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{kickoff_returner_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLateralKickoffReturnerPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{lateral_kickoff_returner_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPunterPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{punter_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasKickerPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{kicker_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasOwnKickoffRecoveryPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{own_kickoff_recovery_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasBlockedPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{blocked_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTackleForLoss1Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{tackle_for_loss_1_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTackleForLoss2Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{tackle_for_loss_2_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasQbHit1Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{qb_hit_1_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasQbHit2Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{qb_hit_2_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasForcedFumblePlayer1Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{forced_fumble_player_1_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasForcedFumblePlayer2Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{forced_fumble_player_2_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSoloTackle1Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{solo_tackle_1_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSoloTackle2Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{solo_tackle_2_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasAssistTackle1Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{assist_tackle_1_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasAssistTackle2Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{assist_tackle_2_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasAssistTackle3Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{assist_tackle_3_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasAssistTackle4Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{assist_tackle_4_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTackleWithAssist1Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{tackle_with_assist_1_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTackleWithAssist2Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{tackle_with_assist_2_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPassDefense1Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{pass_defense_1_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPassDefense2Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{pass_defense_2_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFumbled1Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{fumbled_1_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFumbled2Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{fumbled_2_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFumbleRecovery1Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{fumble_recovery_1_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFumbleRecovery2Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{fumble_recovery_2_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSackPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{sack_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasHalfSack1Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{half_sack_1_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasHalfSack2Player ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{half_sack_2_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasReturnTeam ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/team/{return_team}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPenaltyTeam ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/team/{penalty_team}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPenaltyPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{penalty_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSafetyPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{safety_player_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isSpecialTeamsPlay ] ; rr:objectMap [ rr:column "special_teams_play" ; rr:datatype xsd:booelan ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDrivePlayIdStarted ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/play/{game_id}/{drive_play_id_started}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDrivePlayIdEnded ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/play/{game_id}/{drive_play_id_ended}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFantasyPlayer ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{fantasy_player_id}#this" ]; ] .
+
+<#TriplesMapnflv_game_2> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "plays" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/game/{game_id}#this"; rr:class nfl:Game; rr:graph <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasWeek ] ; rr:objectMap [ rr:column "week" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "game_stadium" ; rr:datatype xsd:string ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasStadium ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/stadium/{stadium_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSeasonType ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{season_type}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasHomeCoach ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/coach#{home_coach}" ]; ] ; 
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasAwayCoach ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/coach#{away_coach}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasStadium ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/stadium/{stadium_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasStadiumRoof ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{roof}Roof" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasStadiumSurface ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{surface}Surface" ]; ] .
+
+
+<#TriplesMapnflvStadium> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "plays" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/stadium/{stadium_id}#this"; rr:class nfl:Stadium; rr:graph <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant owl:sameAs ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "https://www.pro-football-reference.com/stadiums/{stadium_id}.htm" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasRoofOption ] ; rr:objectMap [  rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{roof}Roof" ]; ] ; # this should be added to the game/stadium
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSurface ] ; rr:objectMap [  rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{surface}Surface" ]; ] . # this should be added to the game/stadium
+
+
+<#TriplesMapnflv_plays> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "plays" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/play/{game_id}/{play_id}#this"; rr:class nfl:Play; rr:graph  <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasGameId ] ; rr:objectMap [ rr:column "game_id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSideOfField ] ; rr:objectMap [ rr:column "side_of_field" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasYardline100 ] ; rr:objectMap [ rr:column "yardline_100" ; rr:datatype xsd:float ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasGameDate ] ; rr:objectMap [ rr:column "game_date" ; rr:datatype xsd:dateTime ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasQuarterSecondsRemaining ] ; rr:objectMap [ rr:column "quarter_seconds_remaining" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasHalfSecondsRemaining ] ; rr:objectMap [ rr:column "half_seconds_remaining" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasGameSecondsRemaining ] ; rr:objectMap [ rr:column "game_seconds_remaining" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasGameHalf ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://www.openlinksw.com/ontology/nflverse#{game_half}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasQuarterEnd ] ; rr:objectMap [ rr:column "quarter_end" ; rr:datatype xsd:boolean  ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDriveNumber ] ; rr:objectMap [ rr:column "drive" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSp ] ; rr:objectMap [ rr:column "sp" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasQtr ] ; rr:objectMap [ rr:column "qtr" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDown ] ; rr:objectMap [ rr:column "down"; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasGoalToGo ] ; rr:objectMap [ rr:column "goal_to_go" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTime ] ; rr:objectMap [ rr:column "time" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasYrdln ] ; rr:objectMap [ rr:column "yrdln" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasYdstogo ] ; rr:objectMap [ rr:column "ydstogo" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasYdsnet ] ; rr:objectMap [ rr:column "ydsnet" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDesc ] ; rr:objectMap [ rr:column "play_description" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPlayType ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{play_type}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasYardsGained ] ; rr:objectMap [ rr:column "yards_gained"  ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isShotgun ] ; rr:objectMap [ rr:column "shotgun" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isNoHuddle ] ; rr:objectMap [ rr:column "no_huddle" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isQbDropback ] ; rr:objectMap [ rr:column "qb_dropback" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isQbKneel ] ; rr:objectMap [ rr:column "qb_kneel" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isQbSpike ] ; rr:objectMap [ rr:column "qb_spike" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isQbScramble ] ; rr:objectMap [ rr:column "qb_scramble" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPassLength ] ; rr:objectMap [ rr:term_type rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{pass_length}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPassLocation ] ; rr:objectMap [ rr:term_type rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{pass_location}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasAirYards ] ; rr:objectMap [ rr:column "air_yards" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasYardsAfterCatch ] ; rr:objectMap [ rr:column "yards_after_catch" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasRunLocation ] ; rr:objectMap [ rr:term_type rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{run_location}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasRunGap ] ; rr:objectMap[ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{run_gap}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFieldGoalResult ] ; rr:objectMap [ rr:term_type rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{field_goal_result}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasKickDistance ] ; rr:objectMap [ rr:column "kick_distance"  ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasExtraPointResult ] ; rr:objectMap [ rr:term_type rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{extra_point_result}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTwoPointConversionResult ] ; rr:objectMap [ rr:term_type rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{two_point_conv_result}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasHomeTimeoutsRemaining ] ; rr:objectMap [ rr:column "home_timeouts_remaining" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasAwayTimeoutsRemaining ] ; rr:objectMap [ rr:column "away_timeouts_remaining" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isTimeout ] ; rr:objectMap [ rr:column "timeout" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTotalHomeScore ] ; rr:objectMap [ rr:column "total_home_score" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTotalAwayScore ] ; rr:objectMap [ rr:column "total_away_score" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasScoreDifferential ] ; rr:objectMap [ rr:column "score_differential" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasScoreDifferentialPost ] ; rr:objectMap [ rr:column "score_differential_post" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasExpectedPoints ] ; rr:objectMap [ rr:column "ep" ; rr:datatype xsd:integer]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isPuntBlocked ] ; rr:objectMap [ rr:column "punt_blocked" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isFirstDownRush ] ; rr:objectMap [ rr:column "first_down_rush" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isFirstDownPass ] ; rr:objectMap [ rr:column "first_down_pass" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isFirstDownPenalty ] ; rr:objectMap [ rr:column "first_down_penalty" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isThirdDownConverted ] ; rr:objectMap [ rr:column "third_down_converted" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isThirdDownFailed ] ; rr:objectMap [ rr:column "third_down_failed" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isFourthDownConverted ] ; rr:objectMap [ rr:column "fourth_down_converted" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isFourthDownFailed ] ; rr:objectMap [ rr:column "fourth_down_failed" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isIncompletePass ] ; rr:objectMap [ rr:column "incomplete_pass" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isTouchback ] ; rr:objectMap [ rr:column "touchback" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isInterception ] ; rr:objectMap [ rr:column "interception" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isPuntInsideTwenty ] ; rr:objectMap [ rr:column "punt_inside_twenty" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isPuntInEndzone ] ; rr:objectMap [ rr:column "punt_in_endzone" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isPuntOutOfBounds ] ; rr:objectMap [ rr:column "punt_out_of_bounds" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isPuntDowned ] ; rr:objectMap [ rr:column "punt_downed" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isPuntFairCatch ] ; rr:objectMap [ rr:column "punt_fair_catch" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isKickoffInsideTwenty ] ; rr:objectMap [ rr:column "kickoff_inside_twenty" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isKickoffInEndzone ] ; rr:objectMap [ rr:column "kickoff_in_endzone" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isKickoffOutOfBounds ] ; rr:objectMap [ rr:column "kickoff_out_of_bounds" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isKickoffDowned ] ; rr:objectMap [ rr:column "kickoff_downed" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isKickoffFairCatch ] ; rr:objectMap [ rr:column "kickoff_fair_catch" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isFumbleForced ] ; rr:objectMap [ rr:column "fumble_forced" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isFumbleNotForced ] ; rr:objectMap [ rr:column "fumble_not_forced" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isFumbleOutOfBounds ] ; rr:objectMap [ rr:column "fumble_out_of_bounds" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isSoloTackle ] ; rr:objectMap [ rr:column "solo_tackle" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isSafety ] ; rr:objectMap [ rr:column "safety" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isPenalty ] ; rr:objectMap [ rr:column "penalty" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isTackledForLoss ] ; rr:objectMap [ rr:column "tackled_for_loss" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isFumbleLost ] ; rr:objectMap [ rr:column "fumble_lost" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isOwnKickoffRecovery ] ; rr:objectMap [ rr:column "own_kickoff_recovery" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isOwnKickoffRecoveryTd ] ; rr:objectMap [ rr:column "own_kickoff_recovery_td" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isQbHit ] ; rr:objectMap [ rr:column "qb_hit" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isRushAttempt ] ; rr:objectMap [ rr:column "rush_attempt" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isPassAttempt ] ; rr:objectMap [ rr:column "pass_attempt" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isSack ] ; rr:objectMap [ rr:column "sack" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isTouchdown ] ; rr:objectMap [ rr:column "touchdown" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isPassTouchdown ] ; rr:objectMap [ rr:column "pass_touchdown" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isRushTouchdown ] ; rr:objectMap [ rr:column "rush_touchdown" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isReturnTouchdown ] ; rr:objectMap [ rr:column "return_touchdown" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isExtraPointAttempt ] ; rr:objectMap [ rr:column "extra_point_attempt" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isTwoPointAttempt ] ; rr:objectMap [ rr:column "two_point_attempt" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isFieldGoalAttempt ] ; rr:objectMap [ rr:column "field_goal_attempt" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isKickoffAttempt ] ; rr:objectMap [ rr:column "kickoff_attempt" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isPuntAttempt ] ; rr:objectMap [ rr:column "punt_attempt" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isFumble ] ; rr:objectMap [ rr:column "fumble" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isCompletePass ] ; rr:objectMap [ rr:column "complete_pass" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isAssistTackle ] ; rr:objectMap [ rr:column "assist_tackle" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLateralReception ] ; rr:objectMap [ rr:column "lateral_reception" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLateralRush ] ; rr:objectMap [ rr:column "lateral_rush" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLateralReturn ] ; rr:objectMap [ rr:column "lateral_return" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLateralRecovery ] ; rr:objectMap [ rr:column "lateral_recovery" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPassingYards ] ; rr:objectMap [ rr:column "passing_yards" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasReceivingYards ] ; rr:objectMap [ rr:column "receiving_yards" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasRushingYards ] ; rr:objectMap [ rr:column "rushing_yards" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLateralReceivingYards ] ; rr:objectMap [ rr:column "lateral_receiving_yards" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLateralRushingYards ] ; rr:objectMap [ rr:column "lateral_rushing_yards" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isTackleWithAssist ] ; rr:objectMap [ rr:column "tackle_with_assist" ; rr:datatype xsd:boolean]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFumbleRecovery1Yards ] ; rr:objectMap [ rr:column "fumble_recovery_1_yards" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFumbleRecovery2Yards ] ; rr:objectMap [ rr:column "fumble_recovery_2_yards" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasReturnYards ] ; rr:objectMap [ rr:column "return_yards" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPenaltyYards ] ; rr:objectMap [ rr:column "penalty_yards" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isReplayOrChallenge ] ; rr:objectMap [ rr:column "replay_or_challenge" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasReplayOrChallengeResult ] ; rr:objectMap [ rr:column "replay_or_challenge_result" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPenaltyType ] ; rr:objectMap [ rr:column "penalty_type" ]; ] ; # Needs to be converted to URI
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isDefensiveTwoPointAttempt ] ; rr:objectMap [ rr:column "defensive_two_point_attempt" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isDefensiveTwoPointConv ] ; rr:objectMap [ rr:column "defensive_two_point_conv" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isDefensiveExtraPointAttempt ] ; rr:objectMap [ rr:column "defensive_extra_point_attempt" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isDefensiveExtraPointConv ] ; rr:objectMap [ rr:column "defensive_extra_point_conv" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSeason ] ; rr:objectMap [ rr:column "season" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSeries ] ; rr:objectMap [ rr:column "series" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSeriesSuccess ] ; rr:objectMap [ rr:column "series_success" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSeriesResult ] ; rr:objectMap [ rr:column "series_result" ]; ] ; #Needs to be Converted to URI
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasOrderSequence ] ; rr:objectMap [ rr:column "order_sequence" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTimeOfDay ] ; rr:objectMap [ rr:column "time_of_day" ; rr:datatype xsd:dateTime ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasWeatherSummary ] ; rr:objectMap [ rr:column "weather" ; rr:datatype xsd:string ]; ] ;
+# rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasNflApiId ] ; rr:objectMap [ rr:column "nfl_api_id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPlayDeleted ] ; rr:objectMap [ rr:column "play_deleted" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasNflPlayType ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{play_type_nfl}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSpecialTeamsPlayType ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{st_play_type}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasEndClockTime ] ; rr:objectMap [ rr:column "end_clock_time" ; rr:datatype xsd:dateTime ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFixedDrive ] ; rr:objectMap [ rr:column "fixed_drive" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFixedDriveResult ] ; rr:objectMap [ rr:term_type rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{fixed_drive_result}"  ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDriveRealStartTime ] ; rr:objectMap [ rr:column "drive_real_start_time" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDrivePlayCount ] ; rr:objectMap [ rr:column "drive_play_count" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDriveTimeOfPossession ] ; rr:objectMap [ rr:column "drive_time_of_possession"; rr:datatype xsd:duration ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDriveFirstDowns ] ; rr:objectMap [ rr:column "drive_first_downs" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isDriveInside20 ] ; rr:objectMap [ rr:column "drive_inside20" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isScoringDrive ] ; rr:objectMap [ rr:column "drive_ended_with_score" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDriveQuarterStart ] ; rr:objectMap [ rr:column "drive_quarter_start" ; rr:datatype xsd:integer]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDriveQuarterEnd ] ; rr:objectMap [ rr:column "drive_quarter_end" ; rr:datatype xsd:integer]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDriveYardsPenalized ] ; rr:objectMap [ rr:column "drive_yards_penalized" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDriveStartTransition ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{drive_start_transition}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDriveEndTransition ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{drive_end_transition}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDriveGameClockStart ] ; rr:objectMap [ rr:column "drive_game_clock_start" ; rr:datatype xsd:duration ]; ] ; 
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDriveGameClockEnd ] ; rr:objectMap [ rr:column "drive_game_clock_end"  ; rr:datatype xsd:duration ] ; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDriveStartYardLine ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/yardline/{drive_start_yard_line}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDriveEndYardLine ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/yardline/{drive_end_yard_line}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDrivePlayIdStarted ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/play/{game_id}/{drive_play_id_started}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDrivePlayIdEnded ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/play/{game_id}/{drive_play_id_ended}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasAwayScore ] ; rr:objectMap [ rr:column "away_score" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasHomeScore ] ; rr:objectMap [ rr:column "home_score" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTeamLocation ] ; rr:objectMap [ rr:term_type rr:IRI ;  rr:template "http://www.openlinksw.com/ontology/nflverse#{location}Team" ]; ] ;
+#rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasResult ] ; rr:objectMap [ rr:column "result" ]; ] ;
+#rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTotal ] ; rr:objectMap [ rr:column "total" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isDivisionGame ] ; rr:objectMap [ rr:column "div_game" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTemperature ] ; rr:objectMap [ rr:column "temp" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasWind ] ; rr:objectMap [ rr:column "wind" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasAbortedPlay ] ; rr:objectMap [ rr:column "aborted_play"; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isSuccess ] ; rr:objectMap [ rr:column "success"  ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isPass ] ; rr:objectMap [ rr:column "pass" ; xsd:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isRush ] ; rr:objectMap [ rr:column "rush" ; xsd:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isFirstDown ] ; rr:objectMap [ rr:column "first_down" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isSpecial ] ; rr:objectMap [ rr:column "special" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isPlay ] ; rr:objectMap [ rr:column "play" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPasserId ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{passer_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasRusherId ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{rusher_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasReceiverId ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{receiver_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasId ] ; rr:objectMap [ rr:column "id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFantasyPlayer ] ;rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/{fantasy_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isOutOfBounds ] ; rr:objectMap [ rr:column "out_of_bounds" ; rr:datatype xsd:boolean ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:isHomeOpeningKickoff ] ; rr:objectMap [ rr:column "home_opening_kickoff" ; rr:datatype xsd:boolean ]; ] .
+
+<#TriplesMapPlayParticipants> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "plays_participation" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/play/{nflverse_game_id}/{play_id}#this"; rr:class nfl:Play; rr:graph <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPlayId ] ; rr:objectMap [ rr:column "play_id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasOffenseFormation ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{offense_formation}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefendersInBox ] ; rr:objectMap [ rr:column "defenders_in_box"; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasNumberOfPassRushers ] ; rr:objectMap [ rr:column "number_of_pass_rushers"; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasOffensePlayerCount ] ; rr:objectMap [ rr:column "n_offense"; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefensePlayerCount ] ; rr:objectMap [ rr:column "n_defense"; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasNgsAirYards ] ; rr:objectMap [ rr:column "ngs_air_yards"; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTimeToThrow ] ; rr:objectMap [ rr:column "time_to_throw"; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasWasPressure ] ; rr:objectMap [ rr:column "was_pressure" ]; rr:datatype xsd:integer ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasRoute ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{route}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefenseManZoneType ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{defense_man_zone_type}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefenseCoverageType ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{defense_coverage_type}" ]; ] .
+
+<#TriplesMapPlayParticipantsExt> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "plays_participation_ext" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/play/{nflverse_game_id}/{play_id}#this"; rr:class nfl:Play; rr:graph <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasOffensePlayers ] ; rr:objectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/player/{offense_players}#this"; rr:class nfl:Player ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefensePlayers ] ; rr:objectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/player/{defense_players}#this"; rr:class nfl:Player ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasRunningBackCount ] ; rr:objectMap [ rr:column "running_back_count" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTightEndCount ] ; rr:objectMap [ rr:column "tight_end_count" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasWideReceiverCount ] ; rr:objectMap [ rr:column "wide_receiver_count" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefensiveLineCount ] ; rr:objectMap [ rr:column "defensive_line_count" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLinebackerCount ] ; rr:objectMap [ rr:column "linebacker_count" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefensiveBackCount ] ; rr:objectMap [ rr:column "defensive_back_count" ; rr:datatype xsd:integer ]; ] .
+
+<#TriplesMapplayers> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "players" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/player/{gsis_id}#this"; rr:class nfl:Player; rr:graph <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "display_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFirstName ] ; rr:objectMap [ rr:column "first_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasLastName ] ; rr:objectMap [ rr:column "last_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant owl:sameAs ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/esb/{esb_id}#this" ]; ] ; 
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:suffix ] ; rr:objectMap [ rr:column "suffix" ; rr:datatype xsd:string ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasBirthDate ] ; rr:objectMap [ rr:column "birth_date" ; rr:datatype xsd:dateTime ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:attendedCollege ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/college/{college_uri}#this" ]; ] ; # Revisit to generate URIs
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPositionGroup ] ; rr:objectMap [ rr:term_type rr:IRI; rr:template "https://www.openlinksw.com/ontology/nflverse#{position_group}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPosition ] ; rr:objectMap [ rr:term_type rr:IRI; rr:template "https://www.openlinksw.com/ontology/nflverse#{position}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:jersey_number ] ; rr:objectMap [ rr:column "jersey_number" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:height ] ; rr:objectMap [ rr:column "height" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:weight ] ; rr:objectMap [ rr:column "weight" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:years_of_experience ] ; rr:objectMap [ rr:column "years_of_experience" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:team_abbr ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template " http://demo.openlinksw.com/nflverse/team/{team_abbr}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFootballName ] ; rr:objectMap [ rr:column "football_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasEntryYear ] ; rr:objectMap [ rr:column "entry_year" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasRookieYear ] ; rr:objectMap [ rr:column "rookie_year" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDraftClub ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/team/{draft_club}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasStatus ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/player/status/{status_description_abbr}#this" ]; ] ;
+# rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasStatusShortDescription ] ; rr:objectMap [ rr:column "status_short_description" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant owl:sameAs ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/player/gsis-it/{gsis_it_id}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasShortName ] ; rr:objectMap [ rr:column "short_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSmartId ] ; rr:objectMap [ rr:column "smart_id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:headshot ] ; rr:objectMap [ rr:column "headshot" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant schema:image ] ; rr:objectMap [ rr:column "headshot" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDraftNumber ] ; rr:objectMap [ rr:column "draft_number" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasUniformNumber ] ; rr:objectMap [ rr:column "uniform_number" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDraftRound ] ; rr:objectMap [ rr:column "draft_round" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:season ] ; rr:objectMap [ rr:column "season" ; rr:datatype xsd:integer ]; ] .
+
+
+<#TriplesMapteams> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "players" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/team/{team_abbr}#this"; rr:class nfl:Team; rr:graph <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant owl:sameAs ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/team/{current_team_id}#this" ]; ] .
+
+<#TriplesMapCollege> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "players" ];
+rr:subjectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/college/{college_uri}#this"; rr:class nfl:College ; rr:graph <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "college_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasCollegeConference ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/college/division/{college_conference_uri}#this" ] ] .
+
+
+<#TriplesMapPlayerStatus> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "players" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/player/status/{status_description_abbr}#this" ; rr:class nfl:Status ; rr:graph <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "status_short_description" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:comment ] ; rr:objectMap [ rr:column "status_short_description" ]; ] .
