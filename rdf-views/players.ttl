@@ -1,0 +1,66 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix nfl: <http://www.openlinksw.com/ontology/nflverse#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+<#TriplesMapplayers> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "players" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nfl-kg/player/{gsis_id}#this"; rr:class nfl:players; rr:graph <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:status ] ; rr:objectMap [ rr:column "status" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:display_name ] ; rr:objectMap [ rr:column "display_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:first_name ] ; rr:objectMap [ rr:column "first_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:last_name ] ; rr:objectMap [ rr:column "last_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:esb_id ] ; rr:objectMap [ rr:column "esb_id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:gsis_id ] ; rr:objectMap [ rr:column "gsis_id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:suffix ] ; rr:objectMap [ rr:column "suffix" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:birth_date ] ; rr:objectMap [ rr:column "birth_date" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:college_name ] ; rr:objectMap [ rr:column "college_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:position_group ] ; rr:objectMap [ rr:column "position_group" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:position ] ; rr:objectMap [ rr:column "position" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:jersey_number ] ; rr:objectMap [ rr:column "jersey_number" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:height ] ; rr:objectMap [ rr:column "height" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:weight ] ; rr:objectMap [ rr:column "weight" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:years_of_experience ] ; rr:objectMap [ rr:column "years_of_experience" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:team_abbr ] ; rr:objectMap [ rr:column "team_abbr" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:team_seq ] ; rr:objectMap [ rr:column "team_seq" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:current_team_id ] ; rr:objectMap [ rr:column "current_team_id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:football_name ] ; rr:objectMap [ rr:column "football_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:entry_year ] ; rr:objectMap [ rr:column "entry_year" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:rookie_year ] ; rr:objectMap [ rr:column "rookie_year" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:draft_club ] ; rr:objectMap [ rr:column "draft_club" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:college_conference ] ; rr:objectMap [ rr:column "college_conference" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:status_description_abbr ] ; rr:objectMap [ rr:column "status_description_abbr" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:status_short_description ] ; rr:objectMap [ rr:column "status_short_description" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:gsis_it_id ] ; rr:objectMap [ rr:column "gsis_it_id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:short_name ] ; rr:objectMap [ rr:column "short_name" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:smart_id ] ; rr:objectMap [ rr:column "smart_id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:headshot ] ; rr:objectMap [ rr:column "headshot" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:draft_number ] ; rr:objectMap [ rr:column "draft_number" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:uniform_number ] ; rr:objectMap [ rr:column "uniform_number" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:draft_round ] ; rr:objectMap [ rr:column "draft_round" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:season ] ; rr:objectMap [ rr:column "season" ]; ] .
+
+<#TriplesMapPlayParticipants> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "plays_participation" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/play/{nflverse_game_id}/{play_id}#this"; rr:class nfl:Play; rr:graph <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPlayId ] ; rr:objectMap [ rr:column "play_id" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasOffenseFormation ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{offense_formation}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefendersInBox ] ; rr:objectMap [ rr:column "defenders_in_box"; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasNumberOfPassRushers ] ; rr:objectMap [ rr:column "number_of_pass_rushers"; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasOffensePlayerCount ] ; rr:objectMap [ rr:column "n_offense"; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefensePlayerCount ] ; rr:objectMap [ rr:column "n_defense"; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasNgsAirYards ] ; rr:objectMap [ rr:column "ngs_air_yards"; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasTimeToThrow ] ; rr:objectMap [ rr:column "time_to_throw"; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasWasPressure ] ; rr:objectMap [ rr:column "was_pressure" ]; rr:datatype xsd:integer ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasRoute ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{route}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefenseManZoneType ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{defense_man_zone_type}" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasDefenseCoverageType ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{defense_coverage_type}" ]; ] .
+
+<#TriplesMapPlayParticipantsExt> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "plays_participation_ext" ]; 
+rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/play/{nflverse_game_id}/{play_id}#this"; rr:class nfl:Play; rr:graph <http://demo.openlinksw.com/nflverse#> ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:offense_players ] ; rr:objectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nfl-kg/player/{offense_players}#this"; rr:class nfl:Player ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:defense_players ] ; rr:objectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nfl-kg/player/{defense_players}#this"; rr:class nfl:Player ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:running_back_count ] ; rr:objectMap [ rr:column "running_back_count" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:tight_end_count ] ; rr:objectMap [ rr:column "tight_end_count" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:wide_receiver_count ] ; rr:objectMap [ rr:column "wide_receiver_count" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:defensive_line_count ] ; rr:objectMap [ rr:column "defensive_line_count" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:linebacker_count ] ; rr:objectMap [ rr:column "linebacker_count" ; rr:datatype xsd:integer ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:defensive_back_count ] ; rr:objectMap [ rr:column "defensive_back_count" ; rr:datatype xsd:integer ]; ] .
