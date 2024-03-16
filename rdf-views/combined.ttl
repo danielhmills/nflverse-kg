@@ -81,7 +81,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFantasyPlayer ] ; r
 <#TriplesMapnflv_game_2> a rr:TriplesMap; rr:logicalTable [ rr:tableSchema "nflverse" ; rr:tableOwner "kg" ; rr:tableName "plays" ]; 
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/game/{game_id}#this"; rr:class nfl:Game; rr:graph <http://demo.openlinksw.com/nflverse#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasWeek ] ; rr:objectMap [ rr:column "week" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "game_stadium" ; rr:datatype xsd:string ]; ] ;
+# rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:column "game_stadium" ; rr:datatype xsd:string ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasStadium ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/stadium/{stadium_id}#this" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasSeasonType ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://www.openlinksw.com/ontology/nflverse#{season_type}" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasHomeCoach ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/coach#{home_coach}" ]; ] ; 
