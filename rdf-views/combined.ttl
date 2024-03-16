@@ -9,7 +9,7 @@
 rr:subjectMap [ rr:termType rr:IRI  ; rr:template "http://demo.openlinksw.com/nflverse/game/{game_id}#this"; rr:class nfl:Game; rr:graph <http://demo.openlinksw.com/nflverse#> ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasGameId ] ; rr:objectMap [ rr:column "game_id" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant rdfs:label ] ; rr:objectMap [ rr:termType rr:Literal; rr:template "{game_id}: {home_team} VS {away_team}" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPlay ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/game/{game_id}/{play_id}#this" ]; ];
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasPlay ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/play/{game_id}/{play_id}#this" ]; ];
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasHomeTeam ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/team/{home_team}" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasAwayTeam ] ; rr:objectMap [ rr:termType rr:IRI; rr:template "http://demo.openlinksw.com/nflverse/team/{away_team}" ]; ] .
 
