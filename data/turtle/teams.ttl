@@ -1,0 +1,135 @@
+@prefix : <http://demo.openlinksw.com/nflverse/team/>.
+@prefix nfl: <http://www.openlinksw.com/ontology/nflverse#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+:BUF
+a nfl:Team;
+rdfs:label "Buffalo Bills".
+
+:MIA
+a nfl:Team;
+rdfs:label "Miami Dolphins".
+
+:NE
+a nfl:Team;
+rdfs:label "New England Patriots".
+
+:NYJ
+a nfl:Team;
+rdfs:label "New York Jets".
+
+:BAL
+a nfl:Team;
+rdfs:label "Baltimore Ravens".
+
+:CIN
+a nfl:Team;
+rdfs:label "Cincinnati Bengals".
+
+:CLE
+a nfl:Team;
+rdfs:label "Cleveland Browns".
+
+:PIT
+a nfl:Team;
+rdfs:label "Pittsburgh Steelers".
+
+:HOU
+a nfl:Team;
+rdfs:label "Houston Texans".
+
+:IND
+a nfl:Team;
+rdfs:label "Indianapolis Colts".
+
+:JAX
+a nfl:Team;
+rdfs:label "Jacksonville Jaguars".
+
+:TEN
+a nfl:Team;
+rdfs:label "Tennessee Titans".
+
+:DEN
+a nfl:Team;
+rdfs:label "Denver Broncos".
+
+:KC
+a nfl:Team;
+rdfs:label "Kansas City Chiefs".
+
+:LV
+a nfl:Team;
+rdfs:label "Las Vegas Raiders";  # Note: This team was known as the Oakland Raiders (OAK) before moving to Las Vegas in 2020.
+owl:sameAs :OAK.
+
+:LAC
+a nfl:Team;
+rdfs:label "Los Angeles Chargers"; # Note: This team was known as the San Diego Chargers (SD) before moving to Los Angeles in 2017.
+owl:sameAs :SD.
+
+:DAL
+a nfl:Team;
+rdfs:label "Dallas Cowboys".
+
+:NYG
+a nfl:Team;
+rdfs:label "New York Giants".
+
+:PHI
+a nfl:Team;
+rdfs:label "Philadelphia Eagles".
+
+:WAS
+a nfl:Team;
+rdfs:label "Washington Commanders"; # Note: This team was known as the Washington Redskins until 2020 and as the Washington Football Team (WFT) from 2020-2021.
+owl:sameAs :WFT.
+
+:CHI
+a nfl:Team;
+rdfs:label "Chicago Bears".
+
+:DET
+a nfl:Team;
+rdfs:label "Detroit Lions".
+
+:GB
+a nfl:Team;
+rdfs:label "Green Bay Packers".
+
+:MIN
+a nfl:Team;
+rdfs:label "Minnesota Vikings".
+
+:ATL
+a nfl:Team;
+rdfs:label "Atlanta Falcons".
+
+:CAR
+a nfl:Team;
+rdfs:label "Carolina Panthers".
+
+:NO
+a nfl:Team;
+rdfs:label "New Orleans Saints".
+
+:TB
+a nfl:Team;
+rdfs:label "Tampa Bay Buccaneers".
+
+:ARI
+a nfl:Team;
+rdfs:label "Arizona Cardinals".
+
+:LAR
+a nfl:Team;
+rdfs:label "Los Angeles Rams"; # Note: This team was known as the St. Louis Rams (STL) before moving to Los Angeles in 2016.
+owl:sameAs :STL.
+
+:SF
+a nfl:Team;
+rdfs:label "San Francisco 49ers".
+
+:SEA
+a nfl:Team;
+rdfs:label "Seattle Seahawks".
