@@ -308,7 +308,7 @@ rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:jersey_number ] ; rr:o
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:height ] ; rr:objectMap [ rr:column "height" ; rr:datatype xsd:integer ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:weight ] ; rr:objectMap [ rr:column "weight" ; rr:datatype xsd:integer ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:years_of_experience ] ; rr:objectMap [ rr:column "years_of_experience" ]; ] ;
-rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:team_abbr ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template " http://demo.openlinksw.com/nflverse/team/{team_abbr}#this" ]; ] ;
+rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasCurrentTeam ] ; rr:objectMap [ rr:termType rr:IRI ; rr:template "http://demo.openlinksw.com/nflverse/team/{team_abbr}#this" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasFootballName ] ; rr:objectMap [ rr:column "football_name" ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasEntryYear ] ; rr:objectMap [ rr:column "entry_year" ; rr:datatype xsd:integer ]; ] ;
 rr:predicateObjectMap [ rr:predicateMap [ rr:constant nfl:hasRookieYear ] ; rr:objectMap [ rr:column "rookie_year" ; rr:datatype xsd:integer ]; ] ;
