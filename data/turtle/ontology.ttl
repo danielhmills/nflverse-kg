@@ -1,0 +1,1488 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix nfl:	<http://www.openlinksw.com/ontology/nflverse#> .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
+
+nfl:hasDraftNumber
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDraftNumber" 
+	
+nfl:hasDraftRound
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDraftRound" 
+	
+nfl:hasShortName
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:label	"hasShortName" 
+	
+nfl:hasSmartId
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:label	"hasSmartId" 
+	
+nfl:hasUniformNumber
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasUniformNumber" 
+	
+nfl:hasDefendersInBox
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDefendersInBox" 
+	
+nfl:hasDefenseCoverageType
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasDefenseCoverageType" 
+	
+nfl:hasDefenseManZoneType
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasDefenseManZoneType" 
+	
+nfl:hasDefensePlayerCount
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDefensePlayerCount" 
+	
+nfl:hasNgsAirYards
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasNgsAirYards" 
+	
+nfl:hasNumberOfPassRushers
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasNumberOfPassRushers" 
+	
+nfl:hasOffenseFormation
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasOffenseFormation" 
+	
+nfl:hasOffensePlayerCount
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasOffensePlayerCount" 
+	
+nfl:hasPlayId
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPlayId" 
+	
+nfl:hasRoute
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasRoute" 
+	
+nfl:hasTimeToThrow
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasTimeToThrow" 
+	
+nfl:hasWasPressure
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasWasPressure" 
+	
+nfl:hasAbortedPlay
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"hasAbortedPlay" 
+	
+nfl:hasAirYards
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasAirYards" 
+	
+nfl:hasAwayCoach
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Game ;
+	rdfs:label	"hasAwayCoach" 
+	
+nfl:hasAwayScore
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasAwayScore" 
+	
+nfl:hasAwayTimeoutsRemaining
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasAwayTimeoutsRemaining" 
+	
+nfl:hasDesc
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasDesc" 
+	
+nfl:hasDown
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDown" 
+	
+nfl:hasDriveEndTransition
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasDriveEndTransition" 
+	
+nfl:hasDriveEndYardLine
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasDriveEndYardLine" 
+	
+nfl:hasDriveFirstDowns
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDriveFirstDowns" 
+	
+nfl:hasDriveGameClockEnd
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:duration ;
+	rdfs:label	"hasDriveGameClockEnd" 
+	
+nfl:hasDriveGameClockStart
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:duration ;
+	rdfs:label	"hasDriveGameClockStart" 
+	
+nfl:hasDrivePlayCount
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDrivePlayCount" 
+	
+nfl:hasDrivePlayIdEnded
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasDrivePlayIdEnded" 
+	
+nfl:hasDrivePlayIdStarted
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasDrivePlayIdStarted" 
+	
+nfl:hasDriveQuarterEnd
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDriveQuarterEnd" 
+	
+nfl:hasDriveQuarterStart
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDriveQuarterStart" 
+	
+nfl:hasDriveRealStartTime
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDriveRealStartTime" 
+	
+nfl:hasDriveStartTransition
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasDriveStartTransition" 
+	
+nfl:hasDriveStartYardLine
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasDriveStartYardLine" 
+	
+nfl:hasDriveTimeOfPossession
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:duration ;
+	rdfs:label	"hasDriveTimeOfPossession" 
+	
+nfl:hasDriveYardsPenalized
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDriveYardsPenalized" 
+	
+nfl:hasEndClockTime
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:dateTime ;
+	rdfs:label	"hasEndClockTime" 
+	
+nfl:hasExtraPointResult
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasExtraPointResult" 
+	
+nfl:hasFieldGoalResult
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasFieldGoalResult" 
+	
+nfl:hasFixedDrive
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasFixedDrive" 
+	
+nfl:hasFixedDriveResult
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasFixedDriveResult" 
+	
+nfl:hasFumbleRecovery1Yards
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasFumbleRecovery1Yards" 
+	
+nfl:hasFumbleRecovery2Yards
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasFumbleRecovery2Yards" 
+	
+nfl:hasGameDate
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:dateTime ;
+	rdfs:label	"hasGameDate" 
+	
+nfl:hasGameHalf
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasGameHalf" 
+	
+nfl:hasGameId
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play , nfl:Game ;
+	rdfs:label	"hasGameId" 
+	
+nfl:hasGameSecondsRemaining
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasGameSecondsRemaining" 
+	
+nfl:hasGoalToGo
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasGoalToGo" 
+	
+nfl:hasHalfSecondsRemaining
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasHalfSecondsRemaining" 
+	
+nfl:hasHomeCoach
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Game ;
+	rdfs:label	"hasHomeCoach" 
+	
+nfl:hasHomeScore
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasHomeScore" 
+	
+nfl:hasHomeTimeoutsRemaining
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasHomeTimeoutsRemaining" 
+	
+nfl:hasId
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasId" 
+	
+nfl:hasKickDistance
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasKickDistance" 
+	
+nfl:hasLateralReceivingYards
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasLateralReceivingYards" 
+	
+nfl:hasLateralReception
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"hasLateralReception" 
+	
+nfl:hasLateralRecovery
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"hasLateralRecovery" 
+	
+nfl:hasLateralReturn
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"hasLateralReturn" 
+	
+nfl:hasLateralRush
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"hasLateralRush" 
+	
+nfl:hasLateralRushingYards
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasLateralRushingYards" 
+	
+nfl:hasOrderSequence
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasOrderSequence" 
+	
+nfl:hasPassLength
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPassLength" 
+	
+nfl:hasPassLocation
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPassLocation" 
+	
+nfl:hasPasserId
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPasserId" 
+	
+nfl:hasPassingYards
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasPassingYards" 
+	
+nfl:hasPenaltyType
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPenaltyType" 
+	
+nfl:hasPenaltyYards
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasPenaltyYards" 
+	
+nfl:hasPlay
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Game ;
+	rdfs:label	"hasPlay" 
+	
+nfl:hasPlayDeleted
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"hasPlayDeleted" 
+	
+nfl:hasPlayType
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPlayType" 
+	
+nfl:hasQtr
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasQtr" 
+	
+nfl:hasQuarterEnd
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"hasQuarterEnd" 
+	
+nfl:hasQuarterSecondsRemaining
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasQuarterSecondsRemaining" 
+	
+nfl:hasReceiverId
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasReceiverId" 
+	
+nfl:hasReceivingYards
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasReceivingYards" 
+	
+nfl:hasReplayOrChallengeResult
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasReplayOrChallengeResult" 
+	
+nfl:hasReturnYards
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasReturnYards" 
+	
+nfl:hasRunGap
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasRunGap" 
+	
+nfl:hasRunLocation
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasRunLocation" 
+	
+nfl:hasRusherId
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasRusherId" 
+	
+nfl:hasRushingYards
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasRushingYards" 
+	
+nfl:hasScoreDifferential
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasScoreDifferential" 
+	
+nfl:hasScoreDifferentialPost
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasScoreDifferentialPost" 
+	
+nfl:hasSeason
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasSeason" 
+	
+nfl:hasSeasonType
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Game ;
+	rdfs:label	"hasSeasonType" 
+	
+nfl:hasSeries
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasSeries" 
+	
+nfl:hasSeriesResult
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasSeriesResult" 
+	
+nfl:hasSeriesSuccess
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasSeriesSuccess" 
+	
+nfl:hasSideOfField
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasSideOfField" 
+	
+nfl:hasSp
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"hasSp" 
+	
+nfl:hasStadium
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Game ;
+	rdfs:label	"hasStadium" 
+	
+nfl:hasSurface
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Stadium ;
+	rdfs:label	"hasSurface" 
+	
+nfl:hasTime
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasTime" 
+	
+nfl:hasTimeOfDay
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:dateTime ;
+	rdfs:label	"hasTimeOfDay" 
+	
+nfl:hasTotalAwayScore
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasTotalAwayScore" 
+	
+nfl:hasTotalHomeScore
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasTotalHomeScore" 
+	
+nfl:hasWeek
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Game ;
+	rdfs:label	"hasWeek" 
+	
+nfl:hasWind
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasWind" 
+	
+nfl:hasYardline100
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:float ;
+	rdfs:label	"hasYardline100" 
+	
+nfl:hasYardsAfterCatch
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasYardsAfterCatch" 
+	
+nfl:hasYardsGained
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasYardsGained" 
+	
+nfl:hasYdsnet
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasYdsnet" 
+	
+nfl:hasYdstogo
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasYdstogo" 
+	
+nfl:hasYrdln
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasYrdln" 
+	
+nfl:isAssistTackle
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isAssistTackle" 
+	
+nfl:isCompletePass
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isCompletePass" 
+	
+nfl:isExtraPointAttempt
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isExtraPointAttempt" 
+	
+nfl:isFieldGoalAttempt
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isFieldGoalAttempt" 
+	
+nfl:isFirstDownPass
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isFirstDownPass" 
+	
+nfl:isFirstDownPenalty
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isFirstDownPenalty" 
+	
+nfl:isFirstDownRush
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isFirstDownRush" 
+	
+nfl:isFourthDownConverted
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isFourthDownConverted" 
+	
+nfl:isFourthDownFailed
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isFourthDownFailed" 
+	
+nfl:isFumble
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isFumble" 
+	
+nfl:isFumbleForced
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isFumbleForced" 
+	
+nfl:isFumbleLost
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isFumbleLost" 
+	
+nfl:isFumbleNotForced
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isFumbleNotForced" 
+	
+nfl:isFumbleOutOfBounds
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isFumbleOutOfBounds" 
+	
+nfl:isIncompletePass
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isIncompletePass" 
+	
+nfl:isInterception
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isInterception" 
+	
+nfl:isKickoffAttempt
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isKickoffAttempt" 
+	
+nfl:isKickoffDowned
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isKickoffDowned" 
+	
+nfl:isKickoffFairCatch
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isKickoffFairCatch" 
+	
+nfl:isKickoffInEndzone
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isKickoffInEndzone" 
+	
+nfl:isKickoffInsideTwenty
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isKickoffInsideTwenty" 
+	
+nfl:isKickoffOutOfBounds
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isKickoffOutOfBounds" 
+	
+nfl:isNoHuddle
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isNoHuddle" 
+	
+nfl:isOwnKickoffRecovery
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isOwnKickoffRecovery" 
+	
+nfl:isOwnKickoffRecoveryTd
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isOwnKickoffRecoveryTd" 
+	
+nfl:isPassAttempt
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isPassAttempt" 
+	
+nfl:isPassTouchdown
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isPassTouchdown" 
+	
+nfl:isPenalty
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isPenalty" 
+	
+nfl:isPuntAttempt
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isPuntAttempt" 
+	
+nfl:isPuntBlocked
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isPuntBlocked" 
+	
+nfl:isPuntDowned
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isPuntDowned" 
+	
+nfl:isPuntFairCatch
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isPuntFairCatch" 
+	
+nfl:isPuntInEndzone
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isPuntInEndzone" 
+	
+nfl:isPuntInsideTwenty
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isPuntInsideTwenty" 
+	
+nfl:isPuntOutOfBounds
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isPuntOutOfBounds" 
+	
+nfl:isQbDropback
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isQbDropback" 
+	
+nfl:isQbHit
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isQbHit" 
+	
+nfl:isQbKneel
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isQbKneel" 
+	
+nfl:isQbScramble
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isQbScramble" 
+	
+nfl:isQbSpike
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isQbSpike" 
+	
+nfl:isReturnTouchdown
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isReturnTouchdown" 
+	
+nfl:isRushAttempt
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isRushAttempt" 
+	
+nfl:isRushTouchdown
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isRushTouchdown" 
+	
+nfl:isSack
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isSack" 
+	
+nfl:isSafety
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isSafety" 
+	
+nfl:isShotgun
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isShotgun" 
+	
+nfl:isSoloTackle
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isSoloTackle" 
+	
+nfl:isTackledForLoss
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isTackledForLoss" 
+	
+nfl:isThirdDownConverted
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isThirdDownConverted" 
+	
+nfl:isThirdDownFailed
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isThirdDownFailed" 
+	
+nfl:isTimeout
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isTimeout" 
+	
+nfl:isTouchback
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isTouchback" 
+	
+nfl:isTouchdown
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isTouchdown" 
+	
+nfl:isTwoPointAttempt
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isTwoPointAttempt" 
+	
+nfl:isSpecialTeamsPlay
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:booelan ;
+	rdfs:label	"isSpecialTeamsPlay" 
+	
+nfl:hasAwayTeam
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Game ;
+	rdfs:label	"hasAwayTeam" 
+	
+nfl:hasDefTeamScore
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDefTeamScore" 
+	
+nfl:hasDefTeamScorePost
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDefTeamScorePost" 
+	
+nfl:hasDefTeamTimeoutsRemaining
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDefTeamTimeoutsRemaining" 
+	
+nfl:hasDefensiveTeam
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasDefensiveTeam" 
+	
+nfl:hasHomeTeam
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Game ;
+	rdfs:label	"hasHomeTeam" 
+	
+nfl:hasOldGameId
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasOldGameId" 
+	
+nfl:hasPenaltyTeam
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPenaltyTeam" 
+	
+nfl:hasPosTeamScore
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasPosTeamScore" 
+	
+nfl:hasPosTeamScorePost
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasPosTeamScorePost" 
+	
+nfl:hasPosTeamTimeoutsRemaining
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasPosTeamTimeoutsRemaining" 
+	
+nfl:hasPossesingTeam
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPossesingTeam" 
+	
+nfl:hasPossesingTeamType
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPossesingTeamType" 
+	
+nfl:hasReturnTeam
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasReturnTeam" 
+	
+nfl:hasTimeoutTeam
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasTimeoutTeam" 
+	
+nfl:hasTouchdownTeam
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasTouchdownTeam" 
+	
+nfl:isDefensiveExtraPointAttempt
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isDefensiveExtraPointAttempt" 
+	
+nfl:isDefensiveExtraPointConv
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isDefensiveExtraPointConv" 
+	
+nfl:isDefensiveTwoPointAttempt
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isDefensiveTwoPointAttempt" 
+	
+nfl:isDefensiveTwoPointConv
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isDefensiveTwoPointConv" 
+	
+nfl:isReplayOrChallenge
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isReplayOrChallenge" 
+	
+nfl:headshot
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:label	"headshot" 
+	
+nfl:height
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"height" 
+	
+nfl:jersey_number
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"jersey_number" 
+	
+nfl:season
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"season" 
+	
+nfl:suffix
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:range	xsd:string ;
+	rdfs:label	"suffix" 
+	
+nfl:weight
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"weight" 
+	
+nfl:years_of_experience
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:label	"years_of_experience" 
+	
+nfl:hasBlockedPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasBlockedPlayer" 
+	
+nfl:hasDefensePlayers
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasDefensePlayers" 
+	
+nfl:hasDefensiveBackCount
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDefensiveBackCount" 
+	
+nfl:hasDefensiveLineCount
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDefensiveLineCount" 
+	
+nfl:hasFantasyPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasFantasyPlayer" 
+	
+nfl:hasForcedFumblePlayer1Player
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasForcedFumblePlayer1Player" 
+	
+nfl:hasForcedFumblePlayer2Player
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasForcedFumblePlayer2Player" 
+	
+nfl:hasInterceptionPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasInterceptionPlayer" 
+	
+nfl:hasKickerPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasKickerPlayer" 
+	
+nfl:hasKickoffReturnerPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasKickoffReturnerPlayer" 
+	
+nfl:hasLateralInterceptionPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasLateralInterceptionPlayer" 
+	
+nfl:hasLateralKickoffReturnerPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasLateralKickoffReturnerPlayer" 
+	
+nfl:hasLateralPuntReturnerPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasLateralPuntReturnerPlayer" 
+	
+nfl:hasLateralReceiverPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasLateralReceiverPlayer" 
+	
+nfl:hasLateralRusherPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasLateralRusherPlayer" 
+	
+nfl:hasLateralSackPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasLateralSackPlayer" 
+	
+nfl:hasLinebackerCount
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasLinebackerCount" 
+	
+nfl:hasOffensePlayers
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasOffensePlayers" 
+	
+nfl:hasOwnKickoffRecoveryPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasOwnKickoffRecoveryPlayer" 
+	
+nfl:hasPasserPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPasserPlayer" 
+	
+nfl:hasPenaltyPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPenaltyPlayer" 
+	
+nfl:hasPuntReturnerPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPuntReturnerPlayer" 
+	
+nfl:hasPunterPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPunterPlayer" 
+	
+nfl:hasReceiverPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasReceiverPlayer" 
+	
+nfl:hasRunningBackCount
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasRunningBackCount" 
+	
+nfl:hasRusherPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasRusherPlayer" 
+	
+nfl:hasSackPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasSackPlayer" 
+	
+nfl:hasSafetyPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasSafetyPlayer" 
+	
+nfl:hasTightEndCount
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasTightEndCount" 
+	
+nfl:hasTouchdownPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasTouchdownPlayer" 
+	
+nfl:hasWideReceiverCount
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasWideReceiverCount" 
+	
+nfl:isSpecial
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isSpecial" 
+	
+nfl:isPlay
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isPlay" 
+	
+nfl:hasDriveNumber
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasDriveNumber" 
+	
+nfl:hasExpectedPoints
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasExpectedPoints" 
+	
+nfl:hasNflPlayType
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasNflPlayType" 
+	
+nfl:hasSpecialTeamsPlayType
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasSpecialTeamsPlayType" 
+	
+nfl:hasTeamLocation
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasTeamLocation" 
+	
+nfl:hasTemperature
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasTemperature" 
+	
+nfl:hasTwoPointConversionResult
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasTwoPointConversionResult" 
+	
+nfl:hasWeatherSummary
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:string ;
+	rdfs:label	"hasWeatherSummary" 
+	
+nfl:isDivisionGame
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isDivisionGame" 
+	
+nfl:isDriveInside20
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isDriveInside20" 
+	
+nfl:isFirstDown
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isFirstDown" 
+	
+nfl:isPass
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"isPass" 
+	
+nfl:isRush
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"isRush" 
+	
+nfl:isScoringDrive
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"isScoringDrive" 
+	
+nfl:isSuccess
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isSuccess" 
+	
+nfl:isTackleWithAssist
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isTackleWithAssist" 
+	
+nfl:hasFirstName
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:label	"hasFirstName" 
+	
+nfl:hasLastName
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:label	"hasLastName" 
+	
+nfl:hasPosition
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:label	"hasPosition" 
+	
+nfl:hasPositionGroup
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:label	"hasPositionGroup" 
+	
+nfl:hasStatus
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:label	"hasStatus" 
+	
+nfl:isHomeOpeningKickoff
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isHomeOpeningKickoff" 
+	
+nfl:isOutOfBounds
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:range	xsd:boolean ;
+	rdfs:label	"isOutOfBounds" 
+	
+nfl:hasCollegeConference
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:College ;
+	rdfs:label	"hasCollegeConference" 
+	
+nfl:hasDraftClub
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:label	"hasDraftClub" 
+	
+nfl:hasEntryYear
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasEntryYear" 
+	
+nfl:hasFootballName
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:label	"hasFootballName" 
+	
+nfl:hasRookieYear
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:range	xsd:integer ;
+	rdfs:label	"hasRookieYear" 
+	
+nfl:hasCurrentTeam
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:label	"hasCurrentTeam" 
+	
+nfl:hasQbHitPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasQbHitPlayer" 
+	
+nfl:hasTackleForLossPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasTackleForLossPlayer" 
+	
+nfl:hasAssistTacklePlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasAssistTacklePlayer" 
+	
+nfl:hasFumbleRecoveryPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasFumbleRecoveryPlayer" 
+	
+nfl:hasFumbledPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasFumbledPlayer" 
+	
+nfl:hasHalfSackPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasHalfSackPlayer" 
+	
+nfl:hasPassDefensePlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasPassDefensePlayer" 
+	
+nfl:hasSoloTacklePlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasSoloTacklePlayer" 
+	
+nfl:hasTackleWithAssistPlayer
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Play ;
+	rdfs:label	"hasTackleWithAssistPlayer" 
+	
+nfl:attendedCollege
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:label	"attendedCollege" 
+	
+nfl:hasBirthDate
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Player ;
+	rdfs:range	xsd:dateTime ;
+	rdfs:label	"hasBirthDate" 
+	
+nfl:hasRoofOption
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Stadium ;
+	rdfs:label	"hasRoofOption" 
+	
+nfl:hasStadiumRoof
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Game ;
+	rdfs:label	"hasStadiumRoof" 
+	
+nfl:hasStadiumSurface
+	rdf:type	rdf:Property ;
+	rdfs:domain	nfl:Game ;
+	rdfs:label	"hasStadiumSurface" 
+	
